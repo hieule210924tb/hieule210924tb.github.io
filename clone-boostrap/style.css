@@ -1,0 +1,399 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+.container {
+  width: 1140px;
+  margin: 0 auto;
+}
+.mrb-white {
+  color: #fff;
+}
+.align-right {
+  text-align: right;
+}
+.display-1 {
+  font-size: 3.5rem;
+  font-family: "Old Standard TT", serif;
+}
+.display-2 {
+  font-size: 5.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+.display-4 {
+  letter-spacing: 2px;
+  font-family: "Muli", sans-serif;
+  font-size: 1rem;
+}
+.display-5 {
+  font-family: "Old Standard TT", serif;
+  font-size: 1.7rem;
+  line-height: 1.3;
+}
+.display-7 {
+  font-family: "Muli", sans-serif;
+  font-size: 1.2rem;
+}
+header {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+  width: 100%;
+}
+.nav_bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75px;
+  height: 75px;
+  background-color: #fff;
+}
+.nav_bar i {
+  font-size: 30px;
+}
+/* header2 */
+.header2 {
+  position: relative;
+  padding-top: 255px;
+  padding-bottom: 255px;
+  background-image: url("https://mobirise.com/extensions/tastem4/assets/images/background211.jpg");
+  background-repeat: repeat;
+  background-size: 100%;
+  z-index: 0;
+  background-color: rgb(99, 90, 81);
+  opacity: 0.9;
+}
+.mbr-section-title {
+  color: #fff;
+}
+
+.section-btn {
+  border-radius: 4px;
+  background-color: #222;
+  color: #fff;
+}
+.section-btn:hover {
+  background-color: #fff;
+  border: 2px solid #000;
+  transition: background-color 0.5s;
+}
+/* header3 */
+.header3 {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+}
+
+.content-wrapper {
+  padding-left: 60px;
+  position: relative;
+}
+.vertical-text {
+  font-size: 16px;
+}
+.vertical-text-container {
+  left: 60px;
+  transform: rotate(-90deg);
+  transform-origin: left top;
+  white-space: nowrap;
+  position: absolute;
+  color: #a0a0a0;
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  font-weight: 400;
+}
+.vertical-text-container::before {
+  position: absolute;
+  transform: rotate(-90deg);
+  bottom: 10px;
+  right: -40px;
+  content: "";
+  width: 1px;
+  height: 30px;
+  background-color: #000000;
+  margin-right: 15px;
+}
+
+.standing-out-text {
+  font-family: "Old Standard TT", serif;
+  font-size: 2.8rem;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.help-text {
+  font-family: "Muli", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #949494;
+}
+/* header4 */
+.card-columns {
+  display: flex;
+  justify-content: center;
+}
+.card {
+  border: none;
+}
+.card-img img {
+  width: 327px;
+  height: 262px;
+  border-radius: 5px;
+}
+.card-img > .img-center {
+  height: 411px;
+}
+.card-title {
+  color: #767676;
+  font-size: 1rem;
+}
+.card-text {
+  font-family: "Old Standard TT", serif;
+  font-size: 1.7rem;
+  line-height: 1.3;
+}
+/* feateres */
+.feateres {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #efefef;
+}
+.container-title {
+  font-family: "Old Standard TT", serif;
+  font-size: 2.8rem;
+  margin-top: 2rem;
+  letter-spacing: 2px;
+}
+.row-feateres {
+  display: flex;
+  justify-content: space-between;
+}
+.card-col {
+  width: 23%;
+  background-color: #fff;
+}
+.number {
+  text-align: center;
+  padding: 20px 0;
+}
+.card_title {
+  text-align: center;
+}
+.card-box p {
+  text-align: center;
+  padding: 20px 0;
+}
+.mrb_footer {
+  text-align: center;
+  padding: 20px 0;
+}
+/* feateres */
+.feateres2 {
+  padding-top: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.content {
+  padding: 150px;
+}
+.content-text {
+  color: #767676;
+  font-style: normal;
+  line-height: 1.6;
+}
+.content-section {
+  position: relative;
+}
+.content-section::after {
+  position: absolute;
+  content: "";
+  top: 9px;
+  left: 110px;
+  width: 32px;
+  height: 1px;
+  background-color: #000000;
+}
+/* video */
+.video {
+  background-color: #fff;
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+.back {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  bottom: 0;
+  background-color: #232323;
+}
+.mrb-media {
+  background-image: url("https://mobirise.com/extensions/tastem4/assets/images/background211.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon-wrapper {
+  width: 86px;
+  height: 86px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon-play i {
+  font-size: 30px;
+}
+/* feateres3 */
+.feateres2-wrapper {
+  margin-top: 130px;
+}
+.help-text2 {
+  letter-spacing: 0;
+  color: #000000;
+  font-size: 16px;
+  line-height: 30px;
+}
+/* accordion1 */
+.accordion1 {
+  padding-top: 75px;
+  padding-bottom: 75px;
+  position: relative;
+  background-color: #ece8e5;
+}
+.section-header h2 {
+  font-family: "Old Standard TT", serif;
+  font-size: 2.8rem;
+}
+.accordion-button::after {
+  display: none;
+}
+.accordion-item {
+  padding: 2px;
+}
+.accordion-button:not(.collapsed) {
+  color: #000;
+}
+/* slide */
+.line {
+  width: 100px;
+  height: 1px;
+  background: #1c1c1c;
+}
+.line1 {
+  position: absolute;
+  left: 50%;
+  top: 18px;
+}
+.line2 {
+  position: absolute;
+  left: 54%;
+  top: 23px;
+}
+.carousel-indicators [data-bs-target] {
+  background-color: #cbc8c8;
+  width: 8px;
+  height: 8px;
+  margin: 8px;
+  border-radius: 50%;
+}
+.carousel-indicators .active {
+  background-color: #000;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.carousel-control-prev-icon {
+  background-color: #757373;
+}
+.carousel-control-next-icon {
+  background-color: #757373;
+}
+/* countdown */
+.countdown {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  background-color: #efefef;
+}
+.container_title {
+  font-size: 2.8rem;
+  font-family: "Old Standard TT", serif;
+}
+.container_number {
+  margin-top: 10px;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 60px;
+  letter-spacing: -2px;
+  color: #232323;
+}
+.period {
+  padding-top: 1rem;
+  border-top: 0px solid rgba(0, 0, 0, 0.1);
+  font-size: 20px;
+  font-family: "Muli", sans-serif;
+}
+.container-contact {
+  margin-top: 35px;
+}
+.container-contact a {
+  color: #000;
+}
+.container-contact a::after {
+  position: absolute;
+  content: "";
+  width: 31px;
+  height: 1px;
+  top: 8px;
+  right: 43%;
+  background-color: #000;
+}
+/* form */
+.form {
+  margin-top: 120px;
+}
+.form-input {
+  display: flex;
+  flex-direction: column;
+}
+.form-input input {
+  border: none;
+  border-bottom: 1px solid #000;
+  padding: 35px 0;
+}
+.form-input textarea {
+  border: none;
+  border-bottom: 1px solid #000;
+  padding: 35px 0;
+}
+/* social */
+.soc {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+}
+.soc .soc-item {
+  padding: 15px;
+  font-size: 22px;
+}
+/* map */
+/* footer1 */
+.footer1-left {
+  font-family: "Old Standard TT", serif;
+  font-size: 2.8rem;
+}
+/* footer2 */
+.footer2 {
+  color: #fff;
+}
