@@ -112,6 +112,43 @@ p {
   line-height: 1.7;
   padding: 0 25px;
 }
+.txt13 {
+  font-weight: 500;
+  font-size: 18px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.txt14 {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-size: 13px;
+  color: #999999;
+  line-height: 1.7;
+  list-style: none;
+  padding: 6px 0;
+}
+.txt15 {
+  text-decoration: none;
+  font-family: Montserrat;
+  font-weight: 400;
+  font-size: 13px;
+  color: #ec1d25;
+  line-height: 1.7;
+}
+.txt16 {
+  margin-top: 15px;
+  font-family: Montserrat !important;
+  font-weight: 400 !important;
+  font-size: 12px !important;
+  color: #555555 !important ;
+}
+.txt10 {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-size: 14px;
+  color: #666666;
+}
 .t-center {
   text-align: center;
 }
@@ -468,4 +505,96 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+/* section-sigup */
+.section-sigup {
+  background-image: url("https://preview.colorlib.com/theme/pato/images/icons/pattern1.png.webp");
+  background-repeat: repeat;
+  padding: 85px 0;
+}
+.section-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 0 20px;
+}
+.section-form:has(input:focus) {
+  border: 3px solid #ec1d25;
+}
+.section-form input {
+  border: none;
+}
+.section-form input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: #ced4da !important;
+}
+.col-auto .btn {
+  padding: 8px 50px;
+  border: none;
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+.col-auto .btn:hover {
+  background-color: #ec1d25;
+}
+/* footer */
+.footer-content {
+  color: #fff;
+}
+.footer-container {
+  padding: 40px 0 70px 0;
+}
+.col-md-12 ul {
+  padding-left: 0px !important;
+  padding-top: 20px;
+}
+.txt14 i {
+  margin-right: 12px;
+}
+.footer-center {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+}
+.footer-center span {
+  font-size: 15px;
+  color: #d61c22;
+}
+.footer-center span i {
+  font-size: 10px;
+  color: #fff;
+  margin-right: 8px;
+}
+.footer-img {
+  margin-top: 22px;
+  width: 370px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.footer-end {
+  background-color: #000;
+}
+.footer-end_icon i {
+  padding: 0 10px;
+}
+.footer-end_icon i:hover {
+  color: #d61c22;
+  transition: color ease-in 0.3s;
+}
+.txt17 {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #999999;
+}
+.txt17 > strong {
+  color: #fff;
+}
+.txt17 > strong:hover {
+  color: #d61c22;
+  transition: color ease-in 0.3s;
 }
