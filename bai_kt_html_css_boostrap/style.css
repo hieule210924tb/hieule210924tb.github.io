@@ -162,7 +162,29 @@ header {
   width: 100%;
   z-index: 999;
 }
+.header.scrolled {
+  background-color: #fff;
+}
+.header {
+  transition: background-color 0.3s ease;
+  background-color: transparent;
+}
 
+.header .nav-link,
+.header .fa {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.header.scrolled {
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header.scrolled .nav-link,
+.header.scrolled .fa {
+  color: black;
+}
 .wrap-menu-header {
   position: absolute;
   width: 100%;
@@ -191,7 +213,24 @@ header {
 .social-right .nav-item {
   padding: 0 5px !important;
 }
+.header.scrolled .nav-link {
+  color: black !important;
+}
 
+.header.scrolled .fa {
+  color: black !important;
+}
+.logo-scrolled {
+  display: none;
+}
+
+.header.scrolled .logo-default {
+  display: none;
+}
+
+.header.scrolled .logo-scrolled {
+  display: inline;
+}
 /* section-slide */
 .carousel-control-next,
 .carousel-control-prev {
