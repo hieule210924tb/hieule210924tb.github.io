@@ -1,0 +1,62 @@
+body {
+  background: #fff;
+  font-family: Arial, sans-serif;
+}
+.todo-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+}
+.tabs button {
+  border: none;
+  background: none;
+  margin: 0 15px;
+  font-weight: 600;
+  padding-bottom: 5px;
+}
+.tabs button.active {
+  border-bottom: 2px solid #007bff;
+  color: #007bff;
+}
+.task-item {
+  display: flex;
+  align-items: center;
+  padding: 6px 0;
+}
+.task-item.completed span {
+  text-decoration: line-through;
+  color: #777;
+}
+.delete-btn {
+  border: none;
+  background: transparent;
+  color: red;
+  cursor: pointer;
+}
+.delete-all {
+  margin-top: 15px;
+  display: none;
+}
+.form-control {
+  width: 85% !important;
+}
+.tabs button {
+  margin: 0 70px !important;
+}
+.tabs button.active {
+  border-bottom: 3px solid #007bff !important;
+}
+button.btn-danger {
+  font-size: 14px;
+  padding: 5px 10px;
+}

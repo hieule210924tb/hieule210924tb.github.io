@@ -291,7 +291,7 @@ let users = [
 //         "Teacher": 9,
 //         "Worker" : 4
 //     }
-//-Nhập vào 1 số n. Hãy tìm 1 user có id bằng n
+//==Nhập vào 1 số n. Hãy tìm 1 user có id bằng n
 // const obj = (a) => {
 //   users.map((user, index) => {
 //     if (user.id === a) {
@@ -301,15 +301,127 @@ let users = [
 //   });
 // };
 // obj(3);
-// Nhập vào 1 chuỗi keyword. Hãy lấy ra email của các user có tên (first_name + last_name) chứa keyword.
-const infoEmail = () => {
-  users.map((item, index) => { 
-    if (item.first_name.toLocaleLowerCase && item.last_name.toLocaleLowerCase) {
-      const userEmail = item;
-      console.log(userEmail);
-    } else {
-      console.log("Không tìm thấy");
-    }
-  });
+//== Nhập vào 1 chuỗi keyword. Hãy lấy ra email của các user có tên (first_name + last_name) chứa keyword.
+// const infoEmail = (keyword) => {
+//   users.filter((user) => {
+//     const fullName = `${user.first_name} ${user.last_name}`.toLowerCase();
+//     if (fullName.includes(keyword.toLowerCase())) {
+//       console.log(user.email);
+//     }
+//   });
+// };
+// infoEmail("Perllman");
+//== -Đếm số lượng user có age > 50.
+// const counts = users.filter((item) => item.age > 50).length;
+// console.log("Số lượng user có age > 50:", counts);
+//== -Đếm số lượng user đã kết hôn và chưa kết hôn.
+// const isMarried = [];
+// const isNotMarried = [];
+// users.map((item, index) => {
+//   console.log(item);
+//   item.is_married ? isMarried.push(item) : isNotMarried.push(item);
+// });
+// console.log("Số lượng đã kết hôn " + isMarried.length);
+// console.log("Số lượng chưa kết hôn " + isNotMarried.length);
+//== -Đếm số lượng user theo từng ngành nghề tương ứng.
+// const job = [];
+// const counts = {};
+// users.map((item) => {
+//   job.push(item.job);
+// });
+// for (let i = 0; i < job.length; i++) {
+//   if (counts[job[i]]) {
+//     counts[job[i]]++;
+//   } else {
+//     counts[job[i]] = 1;
+//   }
+// }
+// console.log(counts);
+
+// 5. Xây dựng chương trình quản lý kho hàng như sau:
+// -Cửa hàng gồm các thông tin: tên kho hàng, địa chỉ, người sở hữu, các mặt hàng trong kho.
+// -Mỗi mặt hàng gồm: mã mặt hàng, tên, loại mặt hàng, giá cả.
+// ```jsx
+
+const storage = {
+  name: "Fake Storage",
+  address: "HN",
+  owner: "Dung Tien",
+  items: [
+    {
+      id: 1,
+      name: "Product 1",
+      category: "Furniture",
+      pricce: 20,
+    },
+    {
+      id: 2,
+      name: "Product 2",
+      category: "Device",
+      pricce: 110,
+    },
+    {
+      id: 3,
+      name: "Product 3",
+      category: "Cloth",
+      pricce: 2,
+    },
+  ],
 };
-infoEmail("Ania", "Perllman");
+// *Xây dựng chương trình tương tác với kho hàng. Nhập vào action là yêu cầu ứng với các thao tác:
+//     Action 1 -> Ý nghĩa: Sửa thông tin kho hàng
+//     Action 2 -> Ý nghĩa: Tạo mặt hàng trong kho
+//     Action 3 -> Ý nghĩa: Tìm kiếm mặt hàng
+//     Action 4 -> Ý nghĩa: Xóa mặt hàng
+// -Sau khi thực hiện xong mỗi thao tác, nhập lại action để thực hiện các thao tác khác.
+// -Mô tả chi tiết
+// +action = 1 → Yêu cầu nhập lại tên kho hàng, địa chỉ, người sở hữu. In ra thông tin mới của kho hàng sau khi cập nhật giá trị mới.
+// +action = 2 → Yêu cầu nhập mã mặt hàng, tên, loại, giá cả. In ra thông tin các mặt hàng đang có trong kho. Nếu mã mặt hàng đã tồn tại → yêu cầu nhập lại.
+// +action = 3 → Yêu cầu nhập từ khóa tìm kiếm. In ra thông tin các mặt hàng có tên chứa từ khóa tìm kiếm.  Nếu không có từ khóa tìm kiếm → in ra toàn bộ mặt hàng.
+// +action = 4 → Yêu cầu nhập mã mặt hàng. Xóa mặt hàng có mã tương ứng. Nếu không tìm thấy mã mặt hàng cần xóa → kết thúc.
+
+//Action 1:
+// storage.name = "Read Strage";
+// storage.address = "Thai Binh";
+// storage.owner = "Hieu Le";
+// console.log(storage);
+// Action 2:
+// function addItem(storage, id, name, category, pricce) {
+//   const exit = storage.items.some((item) => item.id === id);
+//   if (exit) {
+//     console.log(`Đã trùng mặt hàng ${id} yêu cầu nhập lại.`);
+//   } else {
+//     storage.items.push({
+//       id: id,
+//       name: name,
+//       category: category,
+//       pricce: pricce,
+//     });
+//   }
+// }
+// addItem(storage, 1, "Product 7", "Both", 1);
+// console.log(storage);
+// Action 3
+// function findItem(storage, name) {
+//   const search = storage.items.filter((item) => item.name === name);
+//   if (name == "") {
+//     console.log(storage.items);
+//   } else {
+//     console.log(search);
+//   }
+// }
+// findItem(storage, "Product 1");
+// Action 4 Yêu cầu nhập mã mặt hàng. Xóa mặt hàng có mã tương ứng. Nếu không tìm thấy mã mặt hàng cần xóa → kết thúc.
+function deleteItem(storage, id) {
+  const index = storage.items.findIndex((item) => item.id === id);
+  console.log(index);
+  if (index !== -1) {
+    storage.items.splice(index, 1);
+    console.log(` Đã xoá sản phẩm có mã = ${id}`);
+  } else {
+    console.log(`Không tìm thấy mã mặt hàng = ${id}. Kết thúc!`);
+  }
+}
+
+deleteItem(storage, 6);
+console.log(storage.items);

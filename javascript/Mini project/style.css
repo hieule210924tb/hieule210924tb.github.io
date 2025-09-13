@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: url("https://unisolar.com.vn/wp-content/uploads/2024/06/Unisolar_13.jpg");
+  background-size: cover;
+}
+.item {
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+.description {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.description_weather-temp {
+  font-size: 25px;
+}
+
+.form-control {
+  width: 50% !important;
+}
