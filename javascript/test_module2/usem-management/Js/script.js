@@ -572,6 +572,25 @@ let posts = [
   },
 ];
 
+//Xử lý active
+const links = document.querySelectorAll("#menu a");
+links.forEach((link) => {
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
+    links.forEach((a) => a.classList.remove("active"));
+    this.classList.add("active");
+  });
+});
+//scroll
+window.addEventListener("scroll", function () {
+  const nav = document.getElementById("menu");
+  if (window.scrollY > 50) {
+    nav.classList.add("scrolled");
+  } else {
+    nav.classList.remove("scrolled");
+  }
+});
+
 //Nạp users từ localStorage nếu có
 let users = JSON.parse(localStorage.getItem("users")) || defaultUsers;
 // Hàm đổi nội dung
@@ -580,11 +599,11 @@ function showPage(page) {
 
   switch (page) {
     case "home":
-      content.innerHTML = `<h2>Trang chủ</h2><p>Chào mừng bạn đến với ứng dụng demo.</p>`;
+      content.innerHTML = `<h2 class='mt-5'></h2><p>Chào mừng bạn đến với bài tập T3H .</p>`;
       break;
     case "login":
       content.innerHTML = `
-        <p id="successLogin" class="text-center text-danger mt-3"></p>
+        <p id="successLogin" class="text-center text-danger mt-5" ></p>
        <div class="container mt-5" style="max-width: 400px;">
         <div class="card shadow-sm">
           <div class="card-body">
@@ -608,7 +627,7 @@ function showPage(page) {
       break;
     case "register":
       content.innerHTML = `
-       <p id="successRes" style ="display: none"></p>
+       <p class='mt-5' id="successRes" style ="display: none"></p>
        <div class="container mt-5" style="max-width: 450px;">
         <div class="card shadow-sm">
           <div class="card-body">
@@ -645,8 +664,8 @@ function showPage(page) {
       break;
     case "users":
       content.innerHTML = `
-        <table class="table  table-hover" id="userList"></table>
-        <h2 class='text-center'>Tìm kiếm Users</h2>
+        <table class="table table-hover" id="userList"></table>
+        <h2 class='text-center mt-5'>Tìm kiếm Users</h2>
        <div class="container mt-4" style="max-width: 500px;">
           <div class="input-group">
             <input id="userKeyword" type="text" class="form-control" placeholder="Nhập từ khóa...">
@@ -659,14 +678,14 @@ function showPage(page) {
       break;
     case "listPosts":
       content.innerHTML = `
-        <h2>Danh sách Posts</h2>
+        <h2 class="text-center mt-5">Danh sách Posts</h2>
         <div id="postList" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 mt-3"></div>
       `;
       renderPosts(posts);
       break;
     case "detailPosts":
       content.innerHTML = `
-        <h2 class='text-center'>Tìm kiếm Post</h2>
+        <h2 class='text-center mt-5'>Tìm kiếm Post</h2>
        <div class="container mt-4" style="max-width: 500px;">
           <div class="input-group">
             <input id="postID" type="number" class="form-control" placeholder="Tìm kiếm theo Post qua ID">
@@ -678,7 +697,7 @@ function showPage(page) {
       break;
     case "detailPostsUser":
       content.innerHTML = `
-        <h2 class='text-center'>Tìm kiếm Post Email User</h2>
+        <h2 class='text-center mt-5'>Tìm kiếm Post Email User</h2>
        <div class="container mt-4" style="max-width: 500px;">
           <div class="input-group">
             <input id="postEmailUser" type="text" class="form-control" placeholder="Tìm kiếm theo Post qua email user">
@@ -845,7 +864,7 @@ function searchUsers(users) {
 //Danh sách Post
 function renderPosts(detailPosts) {
   let viewPost = `
-      <table class="table table-bordered table-striped">
+      <table class="table table-bordered table-striped text-center  ">
         <thead class="table-dark">
           <tr>
             <th>ID</th>
@@ -880,7 +899,11 @@ function renderPosts(detailPosts) {
 function renderDetailPosts() {
   var postId = parseInt(document.getElementById("postID").value.trim());
   let post = posts.find((p) => p.id == postId);
-  console.log(post);
+  if (isNaN(postId)) {
+    document.getElementById("detailPostId").innerHTML =
+      "<div class='text-center mt-3 text-danger'>Vui lòng nhập ID</div>";
+    return;
+  }
   if (!post) {
     document.getElementById("detailPostId").innerHTML =
       "<div class='text-center mt-3 text-danger'>Không tìm thấy ID</div>";
@@ -888,36 +911,41 @@ function renderDetailPosts() {
   }
   let user = users.find((u) => u.id == post.user_id);
   let detailHTML = `
-      <div class="mt-3 card" style="width: 30rem;">
-        <img src="${
-          post.image
-        }"  class="text-center card-img-top" alt="Ảnh post">
-        <div class="card-body">
-          <h5 class="card-title">${post.title}</h5>
-          <p class="card-text">${post.content}</p>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"><b>ID:</b> ${post.id}</li>
-          <li class="list-group-item"><b>Tác giả:</b> ${
-            user ? user.first_name + " " + user.last_name : "Không rõ"
-          }</li>
-          <li class="list-group-item"><b>Ngày tạo:</b> ${post.created_at}</li>
-          <li class="list-group-item"><b>Ngày sửa đổi:</b> ${
-            post.updated_at
-          }</li>
-        </ul>
+     <div class="card mt-3 shadow border-0 rounded-3" 
+     style="width: 30rem; transition: transform 0.3s ease, box-shadow 0.3s ease;"
+     onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.2)';"
+     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='';">
+
+      <img src="${post.image}" 
+          class="card-img-top img-fluid" 
+          alt="Ảnh post" 
+          style="height: 220px; object-fit: cover;">
+      <div class="card-body">
+        <h5 class="card-title text-primary fw-bold">${post.title}</h5>
+        <p class="card-text text-muted">${post.content}</p>
       </div>
+
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><b>ID:</b> ${post.id}</li>
+        <li class="list-group-item"><b>Tác giả:</b> ${
+          user ? user.first_name + " " + user.last_name : "Không rõ"
+        }</li>
+        <li class="list-group-item"><b>Ngày tạo:</b> ${post.created_at}</li>
+        <li class="list-group-item"><b>Ngày sửa đổi:</b> ${post.updated_at}</li>
+      </ul>
+    </div>
+
     `;
   document.getElementById("detailPostId").innerHTML = detailHTML;
 }
 //Xem post theo email user
 function handlePostEmail() {
-  var postEmailValue = document.getElementById("postEmailUser").value.trim();
+  var postEmailInput = document.getElementById("postEmailUser");
+  var postEmailValue = postEmailInput.value.trim();
   let emailUser = users.find((u) => u.email == postEmailValue);
   if (postEmailValue === "") {
     document.getElementById("postEmail").innerHTML =
       "<div class='text-center mt-3 text-danger'>Vui lòng nhập email</div>";
-    postEmailValue = " ";
     return;
   }
   if (!emailUser) {
@@ -928,6 +956,12 @@ function handlePostEmail() {
   let listPostEmail = posts.filter(
     (listPost) => listPost.user_id == emailUser.id
   );
+  if (listPostEmail.length === 0) {
+    document.getElementById("postEmail").innerHTML = `
+    <h5 class='mt-3 '>Kết quả: ${listPostEmail.length} posts của <b>${emailUser.first_name} ${emailUser.last_name}</b></h5> `;
+    postEmailInput.value = "";
+    return;
+  }
   let rows = listPostEmail
     .map(
       (p) => `
@@ -941,8 +975,8 @@ function handlePostEmail() {
     .join("");
 
   document.getElementById("postEmail").innerHTML = `
-    <h5>Kết quả: ${listPostEmail.length} posts của <b>${emailUser.first_name} ${emailUser.last_name}</b></h5>
-    <table class="table table-bordered table-hover">
+    <h5 class='mt-3 '>Kết quả: ${listPostEmail.length} posts của <b>${emailUser.first_name} ${emailUser.last_name}</b></h5>
+    <table class="table mt-3 table-bordered table-hover">
       <thead class="table-dark">
         <tr>
           <th>ID</th>
@@ -951,10 +985,11 @@ function handlePostEmail() {
         </tr>
       </thead>
       <tbody>
-        ${rows}
+        ${rows} 
       </tbody>
     </table>
   `;
+  postEmailInput.value = "";
 }
 // Load mặc định
-showPage("login");
+showPage("home");

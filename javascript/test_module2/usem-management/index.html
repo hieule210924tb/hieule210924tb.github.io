@@ -9,16 +9,14 @@
       rel="stylesheet" />
   </head>
   <body>
-    <nav>
-      <a href="#" onclick="showPage('home')">Trang chủ</a>
-      <a href="#" onclick="showPage('login')">Đăng nhập</a>
-      <a href="#" onclick="showPage('register')">Đăng ký</a>
+    <nav id="menu">
+      <a href="#" class="active" onclick="showPage('home')">Home</a>
+      <a href="#" onclick="showPage('login')">Login</a>
+      <a href="#" onclick="showPage('register')">Register</a>
       <a href="#" onclick="showPage('users')">Users</a>
-      <a href="#" onclick="showPage('listPosts')">Danh sách Posts</a>
-      <a href="#" onclick="showPage('detailPosts')">Xem chi tiết Posts</a>
-      <a href="#" onclick="showPage('detailPostsUser')"
-        >Xem chi tiết Posts theo Email user</a
-      >
+      <a href="#" onclick="showPage('listPosts')">Posts</a>
+      <a href="#" onclick="showPage('detailPosts')">Post Detail</a>
+      <a href="#" onclick="showPage('detailPostsUser')">Posts by User</a>
     </nav>
 
     <div id="content"></div>
