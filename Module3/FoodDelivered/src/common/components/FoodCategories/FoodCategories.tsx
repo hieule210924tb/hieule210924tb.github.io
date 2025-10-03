@@ -1,4 +1,3 @@
-import React from "react";
 import "./FoodCategories.css";
 
 const categories = [

@@ -1,4 +1,3 @@
-import React from "react";
 import "./DeliverProducts.css";
 
 const features = [
