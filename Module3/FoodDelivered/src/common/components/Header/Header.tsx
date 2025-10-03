@@ -1,5 +1,5 @@
 import { Button } from "antd/es/radio";
-import "./Header.css";
+// import "./Header.css";
 
 function Header() {
   const menu = [
@@ -21,32 +21,43 @@ function Header() {
     },
   ];
   return (
-    <div className="header">
-      <div className="container">
-        <div className="header_content">
+    <header className="bg-[#FFF7E8]">
+      <div className="container mx-auto flex items-center justify-between py-6 px-6">
+        {/* Logo */}
+        <div className="flex items-center space-x-8">
           <img
-            className="header-img"
             src="https://superprops-next.vercel.app/_next/static/image/src/common/assets/image/foodDelivery/logo-dark.e4df4459f508ae9796fa8db9a5a723f6.png"
-            alt=""
+            alt="Logo"
+            className="h-8 w-auto"
           />
-          <div className="header-menu">
-            {menu.map((item) => (
-              <ul key={item.id}>
-                <li>{item.name}</li>
-              </ul>
-            ))}
-          </div>
+          {/* Menu */}
+          <nav>
+            <ul className="flex space-x-6 text-gray-800 font-medium">
+              {menu.map((item) => (
+                <li
+                  key={item.id}
+                  className="hover:text-[#13cf9e] cursor-pointer transition-colors">
+                  {item.name}
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
-        <div className="header-btn">
-          <Button className="mb-5 hover:!bg-amber-400 text-black">
+
+        {/* Buttons */}
+        <div className="flex items-center gap-2 space-x-4">
+          <Button
+            type="text"
+            className="!text-gray-900 hover:!bg-[#00334e] !font-semibold hover:!text-white !bg-transparent !py-0 !px-[17px] !h-auto">
             Login Now
           </Button>
-          {/* <Button>Join Free</Button> */}
-          {/* <button className="bg-amber-300">Login Now</button> */}
-          <button className="p-2  bg-amber-300">Join Free</button>
+          {/* Join Free */}
+          <Button className="!bg-[#0C1A38] !text-white  !px-6  hover:!text-[#00334e] rounded-[10px] hover:!bg-white !border-none !font-semibold">
+            Join Free
+          </Button>
         </div>
       </div>
-    </div>
+    </header>
   );
 }
 export default Header;
