@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <input id="input" type="text" placeholder="thêm......." />
+      <button onclick="addItem()">Thêm</button>
+    </div>
+    <ul id="favorite-list">
+      <li class="favorite-list-item">Game 1</li>
+      <li class="favorite-list-item">Game 2</li>
+      <li class="favorite-list-item">Game 3</li>
+    </ul>
+  </body>
+  <script>
+    // const element = document.querySelectorAll(".favorite-list-item");
+    // const item = element.forEach((e) => {
+    //   e.innerText = "I love this thing";
+    //   e.style.color = "red";
+    // });
+    // console.log(item);
+    function addItem() {
+      var textContent = document.getElementById("input").value;
+      const list = document.getElementById("favorite-list");
+      const newItem = document.createElement("li");
+      newItem.className = "favorite-list-item";
+      newItem.innerHTML = textContent;
+
+      list.appendChild(newItem);
+
+      return newItem;
+    }
+  </script>
+</html>

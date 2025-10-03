@@ -1,0 +1,329 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #f7f7f7;
+}
+header {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 92px;
+  background-color: #00000082;
+  z-index: 99;
+}
+header:hover {
+  background-color: #000000;
+  transition: 0.3s ease-in;
+  .menu a {
+    color: #fff;
+  }
+}
+.header-content {
+  width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-img {
+  width: 130px;
+  height: 76px;
+}
+.menu a {
+  padding: 15px;
+  color: #000;
+  text-decoration: none;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-image: url(https://landing-page-ten-beta-23.vercel.app/img/hero-small.jpg);
+  background-size: cover;
+  height: 100vh;
+}
+.container-content {
+  width: 790px;
+  margin-top: 100px;
+  color: #fff;
+}
+.container-content h3 {
+  letter-spacing: 0.7rem;
+  font-size: 60px;
+  font-weight: 400;
+}
+.container-content p {
+  letter-spacing: 0.7rem;
+  margin-top: 5px;
+  font-size: 20px;
+  font-weight: 700;
+}
+.container-content button {
+  margin-top: 50px;
+  width: 164px;
+  height: 54px;
+  border: none;
+  border-radius: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #999;
+  font-size: 16px;
+  cursor: pointer;
+}
+.container-content button:hover {
+  transform: translateY(3px);
+  background-color: #28b485;
+  color: #777;
+}
+.selection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 35px;
+  font-weight: 700px;
+  text-transform: uppercase;
+  color: #7ed56f;
+}
+.select-content {
+  padding: 150px 0;
+  display: flex;
+  width: 1140px;
+  justify-content: space-between;
+}
+.selection-list {
+  background-color: #fff;
+  border-radius: 2px;
+}
+.selection-list ul {
+  padding: 15px 15px 50px 15px;
+}
+.selection-list img {
+  width: 225px;
+  height: 230px;
+}
+.selection-list li {
+  padding: 10px;
+  color: #989898;
+  text-align: center;
+  list-style: none;
+  border-bottom: 1px solid #eee;
+}
+.selection-list li > span {
+  color: #ffb900;
+}
+.selection-list li:last-child {
+  border-bottom: none;
+}
+.selection-contact {
+  background-image: url(https://landing-page-ten-beta-23.vercel.app/img/nat-4.jpg);
+  background-size: cover;
+  text-align: center;
+  color: #fff;
+}
+.selection-contact {
+  display: flex;
+  justify-content: center;
+  height: 255px;
+  align-items: center;
+}
+.content_contact {
+  margin-top: 0;
+  padding: 32px 0;
+}
+.content_contact h2 {
+  font-size: 20px;
+}
+.content_contact p {
+  margin-top: 18px;
+  font-size: 12px;
+  letter-spacing: 0;
+}
+.content_contact button {
+  background-color: #7ed56f;
+  color: #fff;
+  text-transform: uppercase;
+  width: 190px;
+  height: 54px;
+  text-align: center;
+  margin-top: 18px;
+}
+.selection-about {
+  width: 1140px;
+  margin: 0 auto;
+}
+.about-content {
+  display: flex;
+  margin-top: 40px;
+  gap: 30px;
+}
+.about-left {
+  width: 600px;
+}
+.about-left h3 {
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #777777;
+  margin: 15px 0;
+}
+.about-left p {
+  color: #777;
+  margin: 18px 0;
+  font-size: 18px;
+}
+.about-btn {
+  margin-top: 40px;
+  width: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #55c57a;
+  color: #55c57a;
+}
+.about-btn button {
+  padding-bottom: 5px;
+  border: none;
+  font-size: 16px;
+  color: #55c57a;
+  background-color: transparent;
+}
+.about-right {
+  position: relative;
+}
+.about-right img {
+  width: 289px;
+}
+.about-right img:nth-child(2) {
+  position: absolute;
+  top: 40px;
+  right: -165px;
+}
+.about-right img:last-child {
+  position: absolute;
+  right: -50px;
+  top: 100px;
+}
+.selection-book {
+  padding: 150px 0;
+  margin-top: 40px;
+  background-color: #28b485;
+}
+.book-content {
+  width: 1140px;
+  margin: 0 auto;
+  background-image: url(https://landing-page-ten-beta-23.vercel.app/img/nat-10.jpg);
+  background-size: 100%;
+}
+.content-form {
+  width: 50%;
+  padding: 60px;
+  background-color: #dad7d7;
+  opacity: 0.9;
+  letter-spacing: 0.2rem;
+}
+.form-title {
+  font-size: 35px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #7ed56f;
+}
+.form-info {
+  display: flex;
+  flex-direction: column;
+}
+.form-info input {
+  border-radius: 3px;
+  margin-top: 40px;
+  padding: 20px;
+  border: none;
+  border: 1px solid #fff;
+}
+.form-group {
+  margin-top: 30px;
+  display: flex;
+}
+.form-group_radio {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.form-group_radio label {
+  color: #777c7e;
+  margin-left: 15px;
+  font-size: 18px;
+}
+.form-btn {
+  margin-top: 40px;
+  border-radius: 25px;
+  width: 180px;
+  height: 54px;
+  background-color: #55c57a;
+  display: flex;
+  justify-content: center;
+}
+.form-btn button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+.fix-button {
+  position: fixed;
+  bottom: 60px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+.fix-button i {
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background-color: #55c57a;
+  color: #fff;
+}
+.footer {
+  padding: 100px;
+  background-color: #333;
+}
+.footer-logo {
+  text-align: center;
+  margin-bottom: 80px;
+}
+.footer-list {
+  display: flex;
+  border-top: 1px solid #777;
+}
+.footer-list li {
+  cursor: pointer;
+  text-transform: uppercase;
+  padding: 20px 0 0 20px;
+  list-style: none;
+  color: #fff;
+}
+.footer-contact {
+  width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.footer-right p {
+  border-top: 1px solid #777;
+  color: #fff;
+  cursor: pointer;
+  padding-top: 20px;
+}
