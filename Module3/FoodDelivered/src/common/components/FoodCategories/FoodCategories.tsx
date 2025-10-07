@@ -1,5 +1,3 @@
-import "./FoodCategories.css";
-
 const categories = [
   "Pizza",
   "Breakfast",
@@ -22,12 +20,18 @@ const categories = [
 
 const FoodCategories = () => {
   return (
-    <div className="food-categories">
-      <h2 className="title">Popular categories by food</h2>
-      <div className="container">
-        <div className="categories-list">
+    <div className="foodCategories mt-20">
+      <div className="max-w-[1170px] mx-auto">
+        <h2 className="text-center text-[#0f2137] text-[26px] font-bold  ">
+          Popular categories by food
+        </h2>
+        <div className="flex gap-5 flex-wrap justify-center mt-10">
           {categories.map((item, index) => (
-            <span key={index} className="category-item">
+            <span
+              key={index}
+              className="bg-[#f4f7fb] text-[#0d1c2e] py-[10px] px-[18px] rounded-[20px] 
+              text-[16px] font-medium cursor-pointer transition-all duration-300 ease-in-out
+              hover:bg-[#00cc99]  hover:text-white  hover:transition-colors hover:duration-100 hover:ease-in">
               {item}
             </span>
           ))}

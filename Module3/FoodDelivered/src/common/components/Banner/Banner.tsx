@@ -19,7 +19,7 @@ function Banner() {
 
   return (
     <div className="bg-[#FFF4E0] py-16 px-6 md:px-16">
-      <div className="container max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-10">
+      <div className="max-w-[1170px]  mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-10">
         {/* LEFT SIDE */}
         <div className="space-y-6 animate-slide-in-left">
           <h2 className="text-4xl md:text-6xl font-bold leading-tight text-gray-900">
@@ -29,7 +29,6 @@ function Banner() {
             Food, drinks, groceries, and more available for delivery and pickup.
           </p>
 
-          {/* Search box */}
           <div className="flex w-[60%]  max-w-xl overflow-hidden rounded-lg">
             <Input
               size="large"
@@ -57,7 +56,6 @@ function Banner() {
 
           <p className="text-gray-500">Apps Available to download on</p>
 
-          {/* App buttons */}
           <div className="flex flex-wrap gap-4">
             {apps.map((app) => (
               <div
@@ -77,7 +75,6 @@ function Banner() {
           </div>
         </div>
 
-        {/* RIGHT SIDE */}
         <div className="flex justify-center md:justify-end animate-slide-in-right">
           <img
             src="https://superprops-next.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fimage%2Fsrc%2Fcommon%2Fassets%2Fimage%2FfoodDelivery%2Fbanner-1.8bbc07b6c9e491eec1addaedabfe37d0.png&w=1920&q=75"

@@ -11,7 +11,7 @@ function Header() {
 
   return (
     <header className="bg-[#FFF4E0]">
-      <div className="max-w-[1280px] mx-auto flex items-center justify-between py-5 px-6">
+      <div className="max-w-[1170px] mx-auto flex items-center justify-between py-5 ">
         {/* Left: Logo + Menu */}
         <div className="flex items-center gap-10">
           {/* Logo */}
@@ -21,14 +21,11 @@ function Header() {
               alt="React Next Logo"
               className="h-7 w-auto"
             />
-            <span className="text-lg font-semibold text-gray-900">
-              React Next
-            </span>
           </div>
 
           {/* Menu */}
           <nav>
-            <ul className="flex items-center gap-8 text-[16px] font-medium text-[#0C1A38]">
+            <ul className="flex items-center gap-8 text-[14px] font-medium text-[#0C1A38]">
               {menu.map((item) => (
                 <li
                   key={item.id}

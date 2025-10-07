@@ -1,5 +1,7 @@
-import "./FeatureCard.css";
+// import "./FeatureCard.css";
 
+import { Button } from "antd";
+import { ArrowRightOutlined } from "@ant-design/icons";
 function FeatureCard() {
   const restaurant = [
     {
@@ -47,27 +49,47 @@ function FeatureCard() {
   ];
 
   return (
-    <>
-      <h3 className="title ">Available Restaurant Nearby Area</h3>
-      <div className="featureCard">
-        <div className="containerCard">
-          {restaurant.map((item) => (
-            <div className="itemCard">
-              <img width={"100%"} src={item.imgCard} alt={item.title} />
-              <h3>{item.title}</h3>
-              <div className="tag">
-                {item.tags.map((tag, idx) => (
-                  <span key={idx}>{tag} </span>
-                ))}
+    <div className="featureCard mt-28">
+      <div className="max-w-[1170px] mx-auto">
+        <h3 className="text-center text-[#0f2137] text-[26px] font-bold  ">
+          Available Restaurant Nearby Area
+        </h3>
+        <div className="featureCardContent">
+          <div className="flex flex-wrap">
+            {restaurant.map((item) => (
+              <div className="mt-[35px] w-[calc(100%/3)] py-0 px-[15px]">
+                <img
+                  width={"100%"}
+                  src={item.imgCard}
+                  alt={item.title}
+                  className="
+                      hover:-translate-y-[3px] 
+                      transition-transform 
+                      duration-300 
+                      ease-in-out
+                    "
+                />
+                <h3
+                  className="text-[#0f2137] text-[18px] font-medium mt-5 hover:text-[#2e8dff]
+                transition-colors duration-300 ease-in-out">
+                  {item.title}
+                </h3>
+                <div className="text-[#0f2137] text-[16px] hover:text-[#00cc99] transition-colors duration-300 ease-in-out  mt-3">
+                  {item.tags.join("  •  ")}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+          <div className="mt-10 text-center">
+            <Button
+              type="primary"
+              className="hover:!bg-[#2abd98] !border-none !text-[16px] !font-bold !shadow-none !px-[29px] !py-[17px] !rounded-[100px] !bg-[#00cc99] !h-auto">
+              Discover More <ArrowRightOutlined />
+            </Button>
+          </div>
         </div>
-        <button className="cardBtn">
-          Discover More <i className="fa-solid fa-arrow-right"></i>
-        </button>
       </div>
-    </>
+    </div>
   );
 }
 export default FeatureCard;
