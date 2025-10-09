@@ -1,5 +1,3 @@
-// import "./FeatureCard.css";
-
 import { Button } from "antd";
 import { ArrowRightOutlined } from "@ant-design/icons";
 function FeatureCard() {

@@ -1,5 +1,4 @@
-import "./HowItWorks.css";
-
+import { ArrowRightOutlined } from "@ant-design/icons";
 const steps = [
   {
     id: "01",
@@ -26,19 +25,33 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-    <div className="how-it-works">
-      <h2 className="title">Let’s see how it works</h2>
-      <div className="steps">
+    <div className="text-center mx-auto my-[60px] max-w-[1100px]">
+      <h2 className="text-[24px] font-bold mb-[40px] text-[#0d1c2e]">
+        Let's see how it works
+      </h2>
+
+      <div className="flex justify-around flex-wrap gap-[30px]">
         {steps.map((step, index) => (
-          <div className="step" key={index}>
-            <div className="step-img">
-              <span className="step-id">{step.id}</span>
-              <img src={step.img} alt={step.title} />
+          <div key={index} className="max-w-[300px]">
+            <div className="relative inline-block mb-[20px]">
+              <span className="absolute -top-[10px] -left-[-8px] -z-1 bg-[#00cc99] text-white font-bold py-[12px] px-[16px] rounded-[50%]">
+                {step.id}
+              </span>
+              <img
+                src={step.img}
+                alt={step.title}
+                className="w-[200px] h-auto"
+              />
             </div>
-            <h3 className="step-title">{step.title}</h3>
-            <p className="step-desc">{step.desc}</p>
-            <a href="#" className="step-link">
-              {step.link} →
+
+            <h3 className="text-[18px] font-bold mb-[10px]">{step.title}</h3>
+            <p className="text-[#555]  leading-7 text-[14px] mb-[10px]">
+              {step.desc}
+            </p>
+            <a
+              href="#"
+              className="text-[#007bff] text-[14px] font-semibold no-underline">
+              {step.link} <ArrowRightOutlined />
             </a>
           </div>
         ))}

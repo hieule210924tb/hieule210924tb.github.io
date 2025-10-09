@@ -1,0 +1,13 @@
+@keyframes pulseZoom {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.animate-pulseZoom {
+  animation: pulseZoom 0.8s ease-in-out infinite;
+}

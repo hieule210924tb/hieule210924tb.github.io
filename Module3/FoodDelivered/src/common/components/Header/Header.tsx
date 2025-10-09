@@ -1,5 +1,6 @@
 import { Button } from "antd";
-
+import "./Header.css";
+import React from "react";
 function Header() {
   const menu = [
     { id: 1, name: "Home", active: true },
@@ -8,11 +9,26 @@ function Header() {
     { id: 4, name: "Testimonials" },
     { id: 5, name: "Download" },
   ];
-
+  const [scrolled, setScrolled] = React.useState(false);
+  React.useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
-    <header className="bg-[#FFF4E0]">
-      <div className="max-w-[1170px] mx-auto flex items-center justify-between py-5 ">
-        {/* Left: Logo + Menu */}
+    <header
+      className={`bg-[#FFF4E0]  fixed w-full top-0 z-50 ${
+        scrolled ? "bg-white" : ""
+      } `}>
+      <div className="max-w-[1170px] mx-auto flex items-center justify-between py-4 ">
         <div className="flex items-center gap-10">
           {/* Logo */}
           <div className="flex items-center gap-2">
@@ -45,12 +61,17 @@ function Header() {
         <div className="flex items-center gap-5">
           <Button
             type="primary"
-            className="!text-gray-900 !shadow-none !bg-[#FFF4E0]  hover:!bg-[#fff] !font-semibold hover:!text-[#0C1A38] !transition-all !duration-300 !ease-in-out  !px-6 !py-3 !h-auto">
+            className={`!text-gray-900 !shadow-none !bg-transparent !font-semibold hover:!text-[#0C1A38] !transition-all !duration-300 !ease-in-out !px-6 !py-3 !h-auto ${
+              scrolled
+                ? "hover:!bg-[#00334E] hover:!text-white"
+                : "hover:!bg-[#fff]"
+            }`}>
             Login Now
           </Button>
+
           <Button
             type="primary"
-            className="!bg-[#00334E] !rounded-full !px-6 !py-3 !h-auto !font-semibold !text-white hover:!text-[#0C1A38] hover:!bg-[#fff] !transition-all !duration-300 !ease-in-out">
+            className="!bg-[#00334E] hover:!shadow-none !rounded-full !px-6 !py-3 !h-auto !font-semibold !text-white hover:!text-[#0C1A38] hover:!bg-[#fff] !transition-all !duration-300 !ease-in-out">
             Join Free
           </Button>
         </div>
