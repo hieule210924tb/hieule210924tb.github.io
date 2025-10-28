@@ -1,13 +1,9 @@
-import Button from "../components/Button";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
+import Weather from "../components/Weather";
 
 const Layout = () => {
   return (
     <>
-      <Button />
-      <Header />
-      <Footer />
+      <Weather />
     </>
   );
 };

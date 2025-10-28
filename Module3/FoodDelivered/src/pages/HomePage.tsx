@@ -12,7 +12,7 @@ import GallerySection from "../common/components/GalleryImages/GalleryImages";
 import DeliveryExperience from "../common/components/DeliveryExperience/DeliveryExperience";
 import CallToAction from "../common/components/CallToAction/CallToAction";
 
-const HomePage = () => {
+const HomePage: React.FC = () => {
   return (
     <>
       <Banner />
