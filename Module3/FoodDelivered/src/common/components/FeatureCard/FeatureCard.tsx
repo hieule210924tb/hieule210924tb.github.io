@@ -1,51 +1,22 @@
 import { Button } from "antd";
 import { ArrowRightOutlined } from "@ant-design/icons";
-function FeatureCard() {
-  const restaurant = [
-    {
-      id: 1,
-      imgCard:
-        "https://superprops-next.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fimage%2Fsrc%2Fcommon%2Fassets%2Fimage%2FfoodDelivery%2Favailable-restaurant-1.5923122052b56e99088735cd4577e248.png&w=1080&q=75",
-      title: "Pizza Hut Delicious Pizza",
-      tags: ["American", "Fast Food", "Burgers"],
-    },
-    {
-      id: 2,
-      imgCard:
-        "https://superprops-next.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fimage%2Fsrc%2Fcommon%2Fassets%2Fimage%2FfoodDelivery%2Favailable-restaurant-1.5923122052b56e99088735cd4577e248.png&w=1080&q=75",
-      title: "Pizza Hut Delicious Pizza",
-      tags: ["American", "Fast Food", "Burgers"],
-    },
-    {
-      id: 3,
-      imgCard:
-        "https://superprops-next.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fimage%2Fsrc%2Fcommon%2Fassets%2Fimage%2FfoodDelivery%2Favailable-restaurant-1.5923122052b56e99088735cd4577e248.png&w=1080&q=75",
-      title: "Pizza Hut Delicious Pizza",
-      tags: ["American", "Fast Food", "Burgers"],
-    },
-    {
-      id: 4,
-      imgCard:
-        "https://superprops-next.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fimage%2Fsrc%2Fcommon%2Fassets%2Fimage%2FfoodDelivery%2Favailable-restaurant-1.5923122052b56e99088735cd4577e248.png&w=1080&q=75",
-      title: "Pizza Hut Delicious Pizza",
-      tags: ["American", "Fast Food", "Burgers"],
-    },
-    {
-      id: 5,
-      imgCard:
-        "https://superprops-next.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fimage%2Fsrc%2Fcommon%2Fassets%2Fimage%2FfoodDelivery%2Favailable-restaurant-1.5923122052b56e99088735cd4577e248.png&w=1080&q=75",
-      title: "Pizza Hut Delicious Pizza",
-      tags: ["American", "Fast Food", "Burgers"],
-    },
-    {
-      id: 6,
-      imgCard:
-        "https://superprops-next.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fimage%2Fsrc%2Fcommon%2Fassets%2Fimage%2FfoodDelivery%2Favailable-restaurant-1.5923122052b56e99088735cd4577e248.png&w=1080&q=75",
-      title: "Pizza Hut Delicious Pizza",
-      tags: ["American", "Fast Food", "Burgers"],
-    },
-  ];
+import { useEffect, useState } from "react";
+type Product = {
+  id: number;
+  title: string;
+  images: string;
+  tags: string[];
+};
 
+function FeatureCard() {
+  const [products, setProducts] = useState<Product[]>([]);
+  useEffect(() => {
+    fetch("https://dummyjson.com/products")
+      .then((res) => res.json())
+      .then((data) => {
+        setProducts(data.products);
+      });
+  }, []);
   return (
     <div className="featureCard mt-28">
       <div className="max-w-[1170px] mx-auto">
@@ -54,12 +25,12 @@ function FeatureCard() {
         </h3>
         <div className="featureCardContent">
           <div className="flex flex-wrap">
-            {restaurant.map((item) => (
+            {products.slice(0, 6).map((item) => (
               <div className="mt-[35px] w-[calc(100%/3)] py-0 px-[15px]">
                 <img
                   width={"100%"}
-                  src={item.imgCard}
-                  alt={item.title}
+                  src={item.images[0]}
+                  alt={item.tags.join(", ")}
                   className="
                       hover:-translate-y-[3px] 
                       transition-transform 

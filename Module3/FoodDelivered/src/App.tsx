@@ -1,9 +1,13 @@
-import Layout from "./common/layout/Layout";
+// import { BrowserRouter, Route } from "react-router-dom";
+// import Banner from "./common/components/Banner/Banner";
+// import FeatureCard from "./common/components/FeatureCard/FeatureCard";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./common/routers/Routers";
 
 function App() {
   return (
     <>
-      <Layout></Layout>
+      <RouterProvider router={router} />
     </>
   );
 }
