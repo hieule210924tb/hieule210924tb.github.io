@@ -1,4 +1,9 @@
+import { useContext } from "react";
+import { ThemeContext } from "../../../Hooks/ThemeConvert/ThemeContext";
+
 const Footer = () => {
+  const ThemeDark = useContext(ThemeContext);
+  const { theme } = ThemeDark;
   return (
     <footer className="flex items-center justify-between flex-wrap mt-[40px] py-7 w-[1170px] mx-auto">
       <div className="flex items-center gap-2 space-x-3">
@@ -7,11 +12,16 @@ const Footer = () => {
           alt="logo"
           className="h-8"
         />
-        <p className="text-[#0f2137]  text-[15px]">
+        <p
+          className={`${
+            theme === "dark" ? "text-[#fff] " : "text-[#0f2137] "
+          } text-[15px]`}>
           Copyright © 2025{"  "}
           <a
             href="https://redq.io"
-            className="text-blue-600 border-b ml-1 border-[#2e8dff]"
+            className={`${
+              theme === "dark" ? "text-[#fff] " : "text-blue-600 "
+            } border-b ml-1 border-[#2e8dff]`}
             target="_blank"
             rel="noopener noreferrer">
             RedQ, Inc.
@@ -19,7 +29,10 @@ const Footer = () => {
         </p>
       </div>
 
-      <ul className="flex space-x-8 text-[#0f2137] text-[15px]">
+      <ul
+        className={`flex space-x-8 ${
+          theme === "dark" ? "text-[#fff] " : "text-[#0f2137]"
+        }  text-[15px]`}>
         <li className="hover:text-blue-600 cursor-pointer">Support</li>
         <li className="hover:text-blue-600 cursor-pointer">About Us</li>
         <li className="hover:text-blue-600 cursor-pointer">Privacy</li>
@@ -27,7 +40,9 @@ const Footer = () => {
       </ul>
 
       <div className="flex items-center space-x-3 text-[#0f2137]">
-        <span>Social:</span>
+        <span className={`${theme === "dark" ? "text-[#fff] " : ""}`}>
+          Social:
+        </span>
         <img
           src="https://superprops-next.vercel.app/_next/static/image/src/common/assets/image/foodDelivery/footer-fb.cbc6aa152e77cb09a30fbf0df743faad.svg"
           alt="facebook"

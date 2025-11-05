@@ -1,9 +1,28 @@
 import { Button } from "antd";
+import {
+  SunOutlined,
+  ShoppingCartOutlined,
+  MoonOutlined,
+} from "@ant-design/icons";
 import "./Header.css";
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { menuData } from "./menuData";
+import { ThemeContext } from "../../../Hooks/ThemeConvert/ThemeContext";
+import { CartContext } from "../../../Hooks/CartContext/cartContext";
 function Header() {
+  //theme
+  const ThemeDark = useContext(ThemeContext);
+  const { theme, setTheme } = ThemeDark;
+  //cart
+  const cartContext = useContext(CartContext);
+  if (!cartContext) {
+    throw new Error("cartContext must be used within a CartProvider");
+  }
+  const { cart } = cartContext;
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
   const [scrolled, setScrolled] = React.useState(false);
   React.useEffect(() => {
     const handleScroll = () => {
@@ -55,9 +74,27 @@ function Header() {
             </ul>
           </nav>
         </div>
-
         {/* Right: Buttons */}
         <div className="flex items-center gap-5">
+          <Button
+            type="text"
+            icon={theme === "dark" ? <MoonOutlined /> : <SunOutlined />}
+            onClick={toggleTheme}>
+            {theme === "dark" ? "Chế độ tối" : "Chế độ sáng"}
+          </Button>
+          <NavLink to="/cart">
+            <Button
+              type="text"
+              icon={<ShoppingCartOutlined />}
+              size="large"
+              className="cart">
+              {cart.length > 0 && (
+                <span className="absolute -top-1 left-5 bg-red-500 text-white text-xs font-semibold rounded-full w-[18px] h-[18px] flex items-center justify-center">
+                  {cart.length}
+                </span>
+              )}
+            </Button>
+          </NavLink>
           <NavLink to="/login">
             <Button
               type="primary"

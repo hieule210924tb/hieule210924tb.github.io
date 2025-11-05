@@ -1,6 +1,8 @@
 import { Button, Modal, Rate } from "antd";
 import { ArrowRightOutlined, TruckOutlined } from "@ant-design/icons";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { CartContext } from "../../../Hooks/CartContext/cartContext";
+import { ThemeContext } from "../../../Hooks/ThemeConvert/ThemeContext";
 
 type Product = {
   id: number;
@@ -14,6 +16,10 @@ type Product = {
 };
 
 function FeatureCard() {
+  const ThemeDark = useContext(ThemeContext);
+  const { theme } = ThemeDark;
+  const cartContext = useContext(CartContext);
+  const addToCart = cartContext?.addToCart;
   const [products, setProducts] = useState<Product[]>([]);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [openModal, setOpenModal] = useState(false);
@@ -28,11 +34,22 @@ function FeatureCard() {
     setSelectedProduct(item);
     setOpenModal(true);
   };
-
+  const handleAddToCart = (product: Product) => {
+    if (addToCart) {
+      addToCart(product);
+      alert(`${product.title} đã được thêm vào giỏ hàng!`);
+      setOpenModal(false);
+    } else {
+      alert("Unable to add to cart. Please try again later.");
+    }
+  };
   return (
     <div className="featureCard mt-28">
       <div className="max-w-[1170px] mx-auto">
-        <h3 className="text-center text-[#0f2137] text-[26px] font-bold">
+        <h3
+          className={`text-center ${
+            theme === "dark" ? "text-white" : "text-[#0f2137]"
+          } text-[26px] font-bold`}>
           Available Restaurant Nearby Area
         </h3>
 
@@ -49,10 +66,16 @@ function FeatureCard() {
                   alt={item.title}
                   className="hover:-translate-y-[3px] transition-transform duration-300 ease-in-out rounded-lg"
                 />
-                <h3 className="text-[#0f2137] text-[18px] font-medium mt-5 hover:text-[#2e8dff] transition-colors duration-300 ease-in-out">
+                <h3
+                  className={`${
+                    theme === "dark" ? "text-white" : "text-[#0f2137]"
+                  } text-[18px] font-medium mt-5 hover:text-[#2e8dff] transition-colors duration-300 ease-in-out`}>
                   {item.title}
                 </h3>
-                <div className="text-[#555] text-[15px] mt-2">
+                <div
+                  className={`${
+                    theme === "dark" ? "text-white" : "text-[#555]"
+                  } text-[15px] mt-2`}>
                   {item.tags?.length ? item.tags.join(" • ") : "General"}
                 </div>
               </div>
@@ -124,7 +147,8 @@ function FeatureCard() {
 
               <Button
                 type="primary"
-                className="!bg-[#00cc99] hover:!bg-[#2abd98] !border-none !rounded-full !px-6 !py-2">
+                className="!bg-[#00cc99] hover:!bg-[#2abd98] !border-none !rounded-full !px-6 !py-2"
+                onClick={() => handleAddToCart(selectedProduct)}>
                 Add to Cart
               </Button>
             </div>

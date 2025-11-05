@@ -6,6 +6,7 @@ import RegisterPage from "../../pages/RegisterPage";
 import AuthLayout from "../layout/AuthLayout";
 import RestaurantsPage from "../../pages/RestaurantsPage";
 import FeaturesPage from "../../pages/FeaturesPage";
+import CartPage from "../components/CartPage/CartPage";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -14,6 +15,7 @@ export const router = createBrowserRouter([
       { path: "", element: <HomePage /> },
       { path: "/restaurants", element: <RestaurantsPage /> },
       { path: "/features", element: <FeaturesPage /> },
+      { path: "/cart", element: <CartPage /> },
     ],
   },
   {

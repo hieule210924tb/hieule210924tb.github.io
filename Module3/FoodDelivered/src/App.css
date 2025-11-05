@@ -1,0 +1,17 @@
+.light {
+  --bg-color: #0c1a38;
+  --text-color: #fff4e0;
+}
+
+.dark {
+  --bg-color: #000000;
+  --text-color: #0c1a38;
+}
+
+body,
+.light,
+.dark {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
