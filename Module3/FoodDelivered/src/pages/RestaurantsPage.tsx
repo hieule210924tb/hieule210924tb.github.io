@@ -18,7 +18,7 @@ const RestaurantsPage: React.FC = () => {
   const [total, setTotal] = useState(0);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [open, setOpen] = useState<boolean>(false);
-  const limit = 6;
+  const limit = 8;
   const fetchProducts = async () => {
     const skip = page * limit;
     const res = await fetch(
@@ -41,12 +41,12 @@ const RestaurantsPage: React.FC = () => {
   const totalPages = Math.ceil(total / limit);
 
   return (
-    <div className="featureCardContent">
-      <div className="flex flex-wrap">
+    <div className="featureCardContent mt-15">
+      <div className="max-w-[1170px] mx-auto text-center grid 2xl:grid-cols-4 gap-5 sm:grid-cols-2 md:grid-cols-3">
         {products.map((item) => (
           <div
             key={item.id}
-            className="mt-[35px] w-[calc(100%/3)] py-0 px-[15px] cursor-pointer"
+            className=" py-0 px-[15px] cursor-pointer"
             onClick={() => handleShowDetail(item)}>
             <img
               width="100%"

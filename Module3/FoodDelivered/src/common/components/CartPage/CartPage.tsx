@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import { CartContext } from "../../../Hooks/CartContext/cartContext";
+import { CartContext } from "../../../HookContexts/CartContext/cartContext";
 import { Button, List, message } from "antd";
-import { ThemeContext } from "../../../Hooks/ThemeConvert/ThemeContext";
+import { ThemeContext } from "../../../HookContexts/ThemeConvert/ThemeContext";
 
 const CartPage: React.FC = () => {
   const ThemeDark = useContext(ThemeContext);

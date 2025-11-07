@@ -8,8 +8,8 @@ import "./Header.css";
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { menuData } from "./menuData";
-import { ThemeContext } from "../../../Hooks/ThemeConvert/ThemeContext";
-import { CartContext } from "../../../Hooks/CartContext/cartContext";
+import { ThemeContext } from "../../../HookContexts/ThemeConvert/ThemeContext";
+import { CartContext } from "../../../HookContexts/CartContext/cartContext";
 function Header() {
   //theme
   const ThemeDark = useContext(ThemeContext);

@@ -1,8 +1,8 @@
 import { Button, Modal, Rate } from "antd";
 import { ArrowRightOutlined, TruckOutlined } from "@ant-design/icons";
 import { useContext, useEffect, useState } from "react";
-import { CartContext } from "../../../Hooks/CartContext/cartContext";
-import { ThemeContext } from "../../../Hooks/ThemeConvert/ThemeContext";
+import { CartContext } from "../../../HookContexts/CartContext/cartContext";
+import { ThemeContext } from "../../../HookContexts/ThemeConvert/ThemeContext";
 
 type Product = {
   id: number;
